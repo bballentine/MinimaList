@@ -12,6 +12,8 @@ The **Checklist view** displays the individual tasks included in a list. The bac
 
 The **Add/Edit checklist item view** adopts the same minimal theme as the rest of the app and allows users to edit the title and priority of each item.
 
+## App Icon
+
 The app icon uses the progress bar and typography from the main UI.
 
 ![](/Assets/Alternate-Icon@2x.png "MinimaList app icon")
