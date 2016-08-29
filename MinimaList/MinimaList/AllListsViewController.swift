@@ -18,11 +18,6 @@ class AllListsViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120.0
         
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 180, height: 38))
-        imageView.contentMode = .scaleAspectFit
-        let image = UIImage(named: "logo-header")
-        imageView.image = image
-        navigationItem.titleView = imageView
         
         // Create checklist for testing
         let checklist1 = Checklist(name: "iOSI Project 1")
