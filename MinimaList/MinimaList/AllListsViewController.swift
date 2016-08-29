@@ -18,6 +18,12 @@ class AllListsViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120.0
         
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 180, height: 38))
+        imageView.contentMode = .scaleAspectFit
+        let image = UIImage(named: "logo-header")
+        imageView.image = image
+        navigationItem.titleView = imageView
+        
         // Create checklist for testing
         let checklist1 = Checklist(name: "iOSI Project 1")
         let checklistItem1 = ChecklistItem(name: "Create user interface in Sketch", detail: "This is the detail text for an item")
@@ -26,6 +32,16 @@ class AllListsViewController: UITableViewController {
         checklist1.items.append(checklistItem1)
         checklist1.items.append(checklistItem2)
         checklistArray.append(checklist1)
+        
+        let checklist2 = Checklist(name: "My other iOS Project - PSCC")
+        let checklistItem3 = ChecklistItem(name: "Create user interface in Sketch", detail: "This is the detail text for an item")
+        checklistItem3.complete = true
+        let checklistItem4 = ChecklistItem(name: "Create storyboard for UI testing", detail: "This should show up in a less prominent color")
+        let checklistItem5 = ChecklistItem(name: "A totally different item", detail: "Some detail info")
+        checklist2.items.append(checklistItem3)
+        checklist2.items.append(checklistItem4)
+        checklist2.items.append(checklistItem5)
+        checklistArray.append(checklist2)
         
         
 
