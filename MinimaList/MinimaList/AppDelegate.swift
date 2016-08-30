@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        customizeAppearance()
         return true
     }
 
@@ -42,7 +43,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func customizeAppearance() {
+        UINavigationBar.appearance().barTintColor = UIColor.white
+        UINavigationBar.appearance().tintColor = MinimalStyles.darkText
+        UINavigationBar.appearance().isTranslucent = false
         
+        let attributes = [
+            NSForegroundColorAttributeName: UIColor.white,
+            NSFontAttributeName: UIFont(name: "Avenir-Heavy", size: 22)!
+        ]
+        
+        
+        UINavigationBar.appearance().titleTextAttributes = attributes
     }
 
 
