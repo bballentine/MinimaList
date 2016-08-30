@@ -9,9 +9,12 @@
 import UIKit
 
 class ChecklistViewController: UITableViewController {
+    var checklist: Checklist!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = checklist.name
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

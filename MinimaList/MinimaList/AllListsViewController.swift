@@ -10,7 +10,7 @@ import UIKit
 
 class AllListsViewController: UITableViewController {
     
-    var checklistArray: [Checklist] = []
+    var dataModel: DataModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ class AllListsViewController: UITableViewController {
         let checklistItem2 = ChecklistItem(name: "Create storyboard for UI testing", detail: "This should show up in a less prominent color")
         checklist1.items.append(checklistItem1)
         checklist1.items.append(checklistItem2)
-        checklistArray.append(checklist1)
+        dataModel.lists.append(checklist1)
         
         let checklist2 = Checklist(name: "My other iOS Project - PSCC")
         let checklistItem3 = ChecklistItem(name: "Create user interface in Sketch", detail: "This is the detail text for an item")
@@ -43,7 +43,7 @@ class AllListsViewController: UITableViewController {
         checklist2.items.append(checklistItem3)
         checklist2.items.append(checklistItem4)
         checklist2.items.append(checklistItem5)
-        checklistArray.append(checklist2)
+        dataModel.lists.append(checklist2)
         
         
 
@@ -62,8 +62,7 @@ class AllListsViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(checklistArray.count)
-        return checklistArray.count
+        return dataModel.lists.count
     }
 
 
@@ -71,12 +70,19 @@ class AllListsViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChecklistCell", for: indexPath) as! ChecklistCell
 
         // Configure the cell...
-        let checklist = checklistArray[indexPath.row]
+        let checklist = dataModel.lists[indexPath.row]
         cell.checklistTitle.text = checklist.name
         cell.setupProgress(percentageComplete: checklist.percentComplete)
         
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedList = dataModel.lists[indexPath.row]
+        
+        performSegue(withIdentifier: "ListDetail", sender: selectedList)
+        
     }
 
     /*
@@ -114,14 +120,13 @@ class AllListsViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ListDetail" {
+            let controller = segue.destination as! ChecklistViewController
+            controller.checklist = sender as! Checklist
+        }
     }
-    */
 
 }

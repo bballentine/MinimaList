@@ -43,7 +43,6 @@
                                 <connections>
                                     <outlet property="checklistTitle" destination="VUK-EO-XFP" id="aMc-Yb-PfB"/>
                                     <outlet property="progressIndicator" destination="2R8-hG-Prj" id="l7T-YE-rlQ"/>
-                                    <segue destination="b2v-3e-3Tz" kind="show" identifier="ShowChecklist" id="8Fd-J6-0n0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -59,6 +58,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="b2v-3e-3Tz" kind="show" identifier="ListDetail" id="HZW-U7-eUb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PMY-g9-Oz1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -86,10 +88,10 @@
             </objects>
             <point key="canvasLocation" x="2672.8000000000002" y="-598.65067466266873"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Checklist View Controller-->
         <scene sceneID="Ora-z9-NOs">
             <objects>
-                <tableViewController id="b2v-3e-3Tz" sceneMemberID="viewController">
+                <tableViewController id="b2v-3e-3Tz" customClass="ChecklistViewController" customModule="MinimaList" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="svF-vg-A0o">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
