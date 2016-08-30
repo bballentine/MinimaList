@@ -20,6 +20,7 @@
 		15383DBE1D6E999D001B01F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15383DBC1D6E999D001B01F7 /* LaunchScreen.storyboard */; };
 		15918A681D73FE2100930AC8 /* MinimalStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15918A671D73FE2100930AC8 /* MinimalStyles.swift */; };
 		15F6E1EF1D74FFE60044609A /* AddCheckistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F6E1EE1D74FFE60044609A /* AddCheckistViewController.swift */; };
+		15F6E1F11D75010B0044609A /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F6E1F01D75010B0044609A /* DataModel.swift */; };
 		15FDF8361D70D68F0040504F /* ProgressBGView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FDF8351D70D68F0040504F /* ProgressBGView.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		15383DBF1D6E999D001B01F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15918A671D73FE2100930AC8 /* MinimalStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinimalStyles.swift; sourceTree = "<group>"; };
 		15F6E1EE1D74FFE60044609A /* AddCheckistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCheckistViewController.swift; sourceTree = "<group>"; };
+		15F6E1F01D75010B0044609A /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		15FDF8351D70D68F0040504F /* ProgressBGView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBGView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 			children = (
 				152C72AE1D6EA725000775A7 /* Checklist.swift */,
 				152C72B01D6EA734000775A7 /* ChecklistItem.swift */,
+				15F6E1F01D75010B0044609A /* DataModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				15FDF8361D70D68F0040504F /* ProgressBGView.swift in Sources */,
 				15918A681D73FE2100930AC8 /* MinimalStyles.swift in Sources */,
 				152C72B51D6EAD7B000775A7 /* ChecklistItemCell.swift in Sources */,
+				15F6E1F11D75010B0044609A /* DataModel.swift in Sources */,
 				15383DB41D6E999D001B01F7 /* AppDelegate.swift in Sources */,
 				15F6E1EF1D74FFE60044609A /* AddCheckistViewController.swift in Sources */,
 				152C72B91D6EB39F000775A7 /* ChecklistItemViewController.swift in Sources */,
