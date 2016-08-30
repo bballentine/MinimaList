@@ -9,6 +9,8 @@
 import UIKit
 
 class ChecklistItemCell: UITableViewCell {
+    
+    @IBOutlet weak var itemTitle: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

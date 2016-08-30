@@ -14,7 +14,11 @@ class ChecklistViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print(checklist.name)
         self.title = checklist.name
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 120.0
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -31,24 +35,35 @@ class ChecklistViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        if checklist.percentComplete > 0 {
+            return 2
+        }
+        
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        if section == 0 {
+            return checklist.items.count
+        }
+        
+        if section == 1 {
+            return checklist.complete
+        }
+        
         return 0
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ChecklistItemCell
+        
+        let item = checklist.items[indexPath.row]
 
         // Configure the cell...
+        cell.itemTitle.text = item.name
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

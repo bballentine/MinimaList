@@ -13,13 +13,30 @@ class Checklist: NSObject {
     var items = [ChecklistItem]()
     
     var percentComplete: Double {
-        var numberComplete: Double = 0
+        
+        return Double(complete) / Double(self.items.count)
+    }
+    
+    var complete: Int {
+        var numberComplete: Int = 0
         for item in items {
-            if item.complete{
+            if item.complete {
                 numberComplete += 1
             }
         }
-        return numberComplete / Double(self.items.count)
+        
+        return numberComplete
+    }
+    
+    var remaining: Int {
+        var numberRemaining: Int = 0
+        for item in items {
+            if item.complete == false {
+                numberRemaining += 1
+            }
+        }
+        
+        return numberRemaining
     }
     
     init(name: String) {
