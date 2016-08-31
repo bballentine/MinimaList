@@ -8,15 +8,23 @@
 
 import UIKit
 
+enum Priority: Int {
+    case Low = 1
+    case Medium = 2
+    case High = 3
+}
+
 class ChecklistItem: NSObject {
     var name: String
     var detail: String
     var complete: Bool
+    var priority: Priority
     
-    init(name: String, detail: String) {
+    init(name: String, detail: String, priority: Priority) {
         self.name = name
         self.detail = detail
         self.complete = false
+        self.priority = priority
         
         super.init()
         

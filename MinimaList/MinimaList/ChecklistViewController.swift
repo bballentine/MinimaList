@@ -35,23 +35,13 @@ class ChecklistViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if checklist.percentComplete > 0 {
-            return 2
-        }
         
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return checklist.items.count
-        }
         
-        if section == 1 {
-            return checklist.complete
-        }
-        
-        return 0
+        return checklist.items.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
