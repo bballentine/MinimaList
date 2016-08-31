@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a7i-oq-1YZ" id="MrY-np-hRj">
-                                    <frame key="frameInset" width="375" height="119"/>
+                                    <frame key="frameInset" width="375" height="119.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2R8-hG-Prj">
@@ -54,7 +54,7 @@
                     <navigationItem key="navigationItem" id="sNu-KH-Iup">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="1Kb-vf-JN4">
                             <connections>
-                                <segue destination="baJ-bV-LOv" kind="presentation" identifier="AddChecklist" id="4E3-lq-IV3"/>
+                                <segue destination="6rC-0I-b7W" kind="presentation" identifier="AddChecklist" id="E51-Kl-aZS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -64,29 +64,48 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PMY-g9-Oz1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1034.4000000000001" y="112.89355322338831"/>
+            <point key="canvasLocation" x="1028" y="113"/>
         </scene>
-        <!--Add Checkist View Controller-->
-        <scene sceneID="aSd-ng-LHp">
+        <!--Add Checklist-->
+        <scene sceneID="2jn-wb-kcd">
             <objects>
-                <viewController id="pfw-5l-lgi" customClass="AddCheckistViewController" customModule="MinimaList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FpE-kw-4ZS" customClass="AddCheckistViewController" customModule="MinimaList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Miy-pi-qpe"/>
-                        <viewControllerLayoutGuide type="bottom" id="wPR-fY-PFs"/>
+                        <viewControllerLayoutGuide type="top" id="c1o-4H-AFf"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cch-by-PQS"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="M9i-lj-d9Z">
+                    <view key="view" contentMode="scaleToFill" id="4JG-Uy-B8h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Ch1-tf-dI4">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="6RU-3u-pkc"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ch1-tf-dI4" firstAttribute="top" secondItem="c1o-4H-AFf" secondAttribute="bottom" id="uDL-LL-Ict"/>
+                            <constraint firstAttribute="trailing" secondItem="Ch1-tf-dI4" secondAttribute="trailing" id="vg4-Ha-ZCE"/>
+                            <constraint firstItem="Ch1-tf-dI4" firstAttribute="leading" secondItem="4JG-Uy-B8h" secondAttribute="leading" id="ysa-4j-P12"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Tpd-kh-K13">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="OCp-oh-V1P"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="ske-zZ-AEY"/>
+                    <navigationItem key="navigationItem" title="Add Checklist" id="7F2-d1-BZD">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="c7S-6z-hVj"/>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="done" systemItem="done" id="OFb-R2-p54"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="titleLabel" destination="Ch1-tf-dI4" id="Yyq-4X-PSZ"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0VR-xq-fGm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lng-lL-OE8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2672.8000000000002" y="-598.65067466266873"/>
+            <point key="canvasLocation" x="2768.8000000000002" y="-621.13943028485767"/>
         </scene>
         <!--Checklist View Controller-->
         <scene sceneID="Ora-z9-NOs">
@@ -101,7 +120,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jb3-G3-HAk" id="BS5-Yh-xNH">
-                                    <frame key="frameInset" width="375" height="119"/>
+                                    <frame key="frameInset" width="375" height="119.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ej-gN-RdN">
@@ -130,14 +149,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ex1-qH-VXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1848.8" y="124.58770614692655"/>
+            <point key="canvasLocation" x="1830" y="113"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Odw-wJ-bwl">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nZ7-Vr-DrO" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="I6T-rp-Rut">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="I6T-rp-Rut">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -155,22 +174,22 @@
             <point key="canvasLocation" x="95.200000000000003" y="112.89355322338831"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="A2S-PQ-Oi2">
+        <scene sceneID="onA-HY-PL7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="baJ-bV-LOv" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6rC-0I-b7W" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qfz-dY-vf4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GB9-zv-aRe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="pfw-5l-lgi" kind="relationship" relationship="rootViewController" id="6JH-Fk-QmJ"/>
+                        <segue destination="FpE-kw-4ZS" kind="relationship" relationship="rootViewController" id="tqR-mA-cxF"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e3U-7c-p5c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xTC-wP-CSf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1733.5999999999999" y="-598.65067466266873"/>
+            <point key="canvasLocation" x="1829.5999999999999" y="-621.13943028485767"/>
         </scene>
     </scenes>
 </document>
