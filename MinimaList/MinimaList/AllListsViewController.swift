@@ -162,7 +162,6 @@ class AllListsViewController: UITableViewController, AddChecklistViewControllerD
         if segue.identifier == "AddChecklist" {
             let navigationController = segue.destination as! UINavigationController
             let controller = navigationController.topViewController as! AddCheckistViewController
-            
             controller.delegate = self
         } else if segue.identifier == "ListDetail" {
             let controller = segue.destination as! ChecklistViewController

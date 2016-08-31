@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChecklistViewController: UITableViewController {
+class ChecklistViewController: UITableViewController, AddChecklistItemViewControllerDelegate {
     var checklist: Checklist!
 
     override func viewDidLoad() {
@@ -24,6 +24,12 @@ class ChecklistViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,6 +72,11 @@ class ChecklistViewController: UITableViewController {
         cell.textLabel?.text = listItem.name
     }
     
+    @IBAction func addItemPressed(_ sender: AnyObject) {
+        performSegue(withIdentifier: "AddItem", sender: self)
+    }
+    
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -101,7 +112,26 @@ class ChecklistViewController: UITableViewController {
         return true
     }
     */
+    
+    // MARK: - AddChecklistItemVC Delegate Methods
+    
+    func addChecklistItemViewControllerDidCancel(controller: AddChecklistItemViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func addChecklistItemViewController(controller: AddChecklistItemViewController, didAddChecklistItem item: ChecklistItem) {
+        checklist.items.append(item)
+        dismiss(animated: true, completion: nil)
+    }
 
      // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddItem" {
+            let navigationController = segue.destination as! UINavigationController
+            let controller = navigationController.topViewController as! AddChecklistItemViewController
+            controller.delegate = self
+        }
+    }
 
 }

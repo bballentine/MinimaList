@@ -18,6 +18,7 @@
 		15383DB91D6E999D001B01F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15383DB71D6E999D001B01F7 /* Main.storyboard */; };
 		15383DBB1D6E999D001B01F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15383DBA1D6E999D001B01F7 /* Assets.xcassets */; };
 		15383DBE1D6E999D001B01F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15383DBC1D6E999D001B01F7 /* LaunchScreen.storyboard */; };
+		156C0D581D77837000E1E900 /* AddChecklistItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156C0D571D77837000E1E900 /* AddChecklistItemViewController.swift */; };
 		15918A681D73FE2100930AC8 /* MinimalStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15918A671D73FE2100930AC8 /* MinimalStyles.swift */; };
 		15F6E1EF1D74FFE60044609A /* AddCheckistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F6E1EE1D74FFE60044609A /* AddCheckistViewController.swift */; };
 		15F6E1F11D75010B0044609A /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F6E1F01D75010B0044609A /* DataModel.swift */; };
@@ -38,6 +39,7 @@
 		15383DBA1D6E999D001B01F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15383DBD1D6E999D001B01F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		15383DBF1D6E999D001B01F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		156C0D571D77837000E1E900 /* AddChecklistItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddChecklistItemViewController.swift; sourceTree = "<group>"; };
 		15918A671D73FE2100930AC8 /* MinimalStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinimalStyles.swift; sourceTree = "<group>"; };
 		15F6E1EE1D74FFE60044609A /* AddCheckistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCheckistViewController.swift; sourceTree = "<group>"; };
 		15F6E1F01D75010B0044609A /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				152C72B61D6EB379000775A7 /* ChecklistViewController.swift */,
 				152C72B81D6EB39F000775A7 /* ChecklistItemViewController.swift */,
 				15F6E1EE1D74FFE60044609A /* AddCheckistViewController.swift */,
+				156C0D571D77837000E1E900 /* AddChecklistItemViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				152C72AA1D6EA5BB000775A7 /* AllListsViewController.swift in Sources */,
+				156C0D581D77837000E1E900 /* AddChecklistItemViewController.swift in Sources */,
 				152C72B71D6EB379000775A7 /* ChecklistViewController.swift in Sources */,
 				15FDF8361D70D68F0040504F /* ProgressBGView.swift in Sources */,
 				15918A681D73FE2100930AC8 /* MinimalStyles.swift in Sources */,

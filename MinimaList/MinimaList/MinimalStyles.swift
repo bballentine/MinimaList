@@ -18,10 +18,10 @@ public class MinimalStyles : NSObject {
 
     private struct Cache {
         static let darkText: UIColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000)
-        static let priorityHigh: UIColor = UIColor(red: 0.663, green: 0.663, blue: 0.663, alpha: 1.000)
-        static let priorityMedium: UIColor = UIColor(red: 0.839, green: 0.839, blue: 0.839, alpha: 1.000)
-        static let priorityLow: UIColor = UIColor(red: 0.922, green: 0.922, blue: 0.922, alpha: 1.000)
-        static let progressBackground: UIColor = UIColor(red: 0.894, green: 0.886, blue: 0.898, alpha: 1.000)
+        static let priorityHigh: UIColor = UIColor(red: 0.286, green: 0.290, blue: 0.294, alpha: 1.000)
+        static let priorityMedium: UIColor = UIColor(red: 0.733, green: 0.737, blue: 0.741, alpha: 1.000)
+        static let priorityLow: UIColor = UIColor(red: 0.898, green: 0.902, blue: 0.906, alpha: 1.000)
+        static let progressBackground: UIColor = UIColor(red: 0.898, green: 0.902, blue: 0.906, alpha: 1.000)
     }
 
     //// Colors
