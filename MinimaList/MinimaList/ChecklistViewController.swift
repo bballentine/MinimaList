@@ -46,14 +46,27 @@ class ChecklistViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ChecklistItemCell
-        
         let item = checklist.items[indexPath.row]
 
         // Configure the cell...
-        cell.itemTitle.text = item.name
+        configureCell(cell: cell, listItem: item)
 
         return cell
     }
+    
+    func configureCell(cell: UITableViewCell, listItem: ChecklistItem) {
+        switch listItem.priority {
+        case .Low:
+            cell.backgroundColor = MinimalStyles.priorityLow
+        case .Medium:
+            cell.backgroundColor = MinimalStyles.priorityMedium
+        case .High:
+            cell.backgroundColor = MinimalStyles.priorityHigh
+        }
+        
+        cell.textLabel?.text = listItem.name
+    }
+
 
     /*
     // Override to support conditional editing of the table view.

@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().isTranslucent = false
         
         let attributes = [
-            NSForegroundColorAttributeName: UIColor.black,
+            NSForegroundColorAttributeName: MinimalStyles.darkText,
             NSFontAttributeName: UIFont(name: "Avenir-Heavy", size: 20)!
         ]
         

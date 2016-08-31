@@ -39,7 +39,7 @@ class AllListsViewController: UITableViewController {
         let checklistItem3 = ChecklistItem(name: "Create user interface in Sketch", detail: "This is the detail text for an item", priority: .High)
         checklistItem3.complete = true
         let checklistItem4 = ChecklistItem(name: "Create storyboard for UI testing", detail: "This should show up in a less prominent color", priority: .Medium)
-        let checklistItem5 = ChecklistItem(name: "A totally different item", detail: "Some detail info", priority: .Medium)
+        let checklistItem5 = ChecklistItem(name: "A totally different item", detail: "Some detail info", priority: .Low)
         checklist2.items.append(checklistItem3)
         checklist2.items.append(checklistItem4)
         checklist2.items.append(checklistItem5)
@@ -119,7 +119,7 @@ class AllListsViewController: UITableViewController {
         return true
     }
     */
-
+    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
