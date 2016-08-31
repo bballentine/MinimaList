@@ -54,12 +54,13 @@
                     <navigationItem key="navigationItem" id="sNu-KH-Iup">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="1Kb-vf-JN4">
                             <connections>
-                                <segue destination="6rC-0I-b7W" kind="presentation" identifier="AddChecklist" id="E51-Kl-aZS"/>
+                                <action selector="addButtonPressed:" destination="IoU-zl-5rD" id="PC4-se-GZ6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="b2v-3e-3Tz" kind="show" identifier="ListDetail" id="HZW-U7-eUb"/>
+                        <segue destination="6rC-0I-b7W" kind="presentation" identifier="AddChecklist" id="nVe-1n-CsX"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PMY-g9-Oz1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -86,6 +87,9 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <action selector="textFieldChanged:" destination="FpE-kw-4ZS" eventType="editingChanged" id="9p8-cg-YhE"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -96,10 +100,19 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Checklist" id="7F2-d1-BZD">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="c7S-6z-hVj"/>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="done" systemItem="done" id="OFb-R2-p54"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="c7S-6z-hVj">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="FpE-kw-4ZS" id="9Lg-4u-ZXE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="done" systemItem="done" id="OFb-R2-p54">
+                            <connections>
+                                <action selector="doneButtonPressed:" destination="FpE-kw-4ZS" id="hQS-bN-R33"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="doneButton" destination="OFb-R2-p54" id="hIZ-Ed-qG3"/>
                         <outlet property="titleLabel" destination="Ch1-tf-dI4" id="Yyq-4X-PSZ"/>
                     </connections>
                 </viewController>

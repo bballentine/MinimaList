@@ -25,17 +25,5 @@ class ChecklistCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    func setupProgress(percentageComplete: Double) {
-        let cellDimensions = self.bounds
-        let width = Double(cellDimensions.width)
-        let height = Double(cellDimensions.height)
-        let progressWidth = width * percentageComplete
-        let myRect = CGRect(x: 0, y: 0, width: progressWidth, height: height)
-        let progressView = UIView(frame: myRect)
-        progressView.backgroundColor = MinimalStyles.progressBackground
-        progressIndicator.addSubview(progressView)
-    }
-    
 
 }

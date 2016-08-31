@@ -14,7 +14,6 @@ class ChecklistViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(checklist.name)
         self.title = checklist.name
         
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -66,7 +65,7 @@ class ChecklistViewController: UITableViewController {
         
         cell.textLabel?.text = listItem.name
     }
-
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -103,14 +102,6 @@ class ChecklistViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
 
 }

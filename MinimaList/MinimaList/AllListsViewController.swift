@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AllListsViewController: UITableViewController {
+class AllListsViewController: UITableViewController, AddChecklistViewControllerDelegate{
     
     var dataModel: DataModel!
 
@@ -53,6 +53,12 @@ class AllListsViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -71,10 +77,8 @@ class AllListsViewController: UITableViewController {
 
         // Configure the cell...
         let checklist = dataModel.lists[indexPath.row]
-        cell.checklistTitle.text = checklist.name
-        cell.setupProgress(percentageComplete: checklist.percentComplete)
+        configureCell(cell: cell, forList: checklist)
         
-
         return cell
     }
     
@@ -84,6 +88,35 @@ class AllListsViewController: UITableViewController {
         performSegue(withIdentifier: "ListDetail", sender: selectedList)
         
     }
+    
+    // MARK: Add Checklist Delegate
+    func addChecklistViewControllerDidCancel(controller: AddCheckistViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func addChecklistViewController(controller: AddCheckistViewController, didFinishAddingChecklist checklist: Checklist) {
+        dataModel.lists.append(checklist)
+        dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: Cell Configuration
+
+    func configureCell(cell: ChecklistCell, forList list: Checklist) {
+        cell.checklistTitle.text = list.name
+        
+        if list.items.count > 0 {
+            let cellDimensions = cell.bounds
+            let width = Double(cellDimensions.width)
+            let height = Double(cellDimensions.height)
+            let progressWidth = width * list.percentComplete
+            let myRect = CGRect(x: 0, y: 0, width: progressWidth, height: height)
+            let progressView = UIView(frame: myRect)
+            progressView.backgroundColor = MinimalStyles.progressBackground
+            cell.progressIndicator.addSubview(progressView)
+        }
+        
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -119,14 +152,23 @@ class AllListsViewController: UITableViewController {
         return true
     }
     */
+    @IBAction func addButtonPressed(_ sender: AnyObject) {
+        performSegue(withIdentifier: "AddChecklist", sender: sender)
+    }
     
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ListDetail" {
+        if segue.identifier == "AddChecklist" {
+            let navigationController = segue.destination as! UINavigationController
+            let controller = navigationController.topViewController as! AddCheckistViewController
+            
+            controller.delegate = self
+        } else if segue.identifier == "ListDetail" {
             let controller = segue.destination as! ChecklistViewController
             controller.checklist = sender as! Checklist
         }
+        
     }
 
 }
