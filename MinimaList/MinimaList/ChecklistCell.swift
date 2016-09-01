@@ -11,7 +11,7 @@ import UIKit
 class ChecklistCell: UITableViewCell {
     
     @IBOutlet weak var checklistTitle: UILabel!
-    @IBOutlet weak var progressIndicator: UIView!
+    @IBOutlet weak var progressIndicator: ProgressView!
     
 
     override func awakeFromNib() {
