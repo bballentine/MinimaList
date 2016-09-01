@@ -18,14 +18,6 @@ class AllListsViewController: UITableViewController, AddChecklistViewControllerD
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120.0
         
-        // Add image to navbar
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 180, height: 30))
-        imageView.contentMode = .scaleAspectFit
-        let image = UIImage(named: "header-icon")
-        imageView.image = image
-        navigationItem.titleView = imageView
-        
-        
         // Create checklist for testing
         let checklist1 = Checklist(name: "iOSI Project 1")
         let checklistItem1 = ChecklistItem(name: "Create user interface in Sketch", detail: "This is the detail text for an item", priority: .Low)
