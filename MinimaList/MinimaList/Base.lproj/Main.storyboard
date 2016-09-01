@@ -61,11 +61,12 @@
                     <connections>
                         <segue destination="b2v-3e-3Tz" kind="show" identifier="ListDetail" id="HZW-U7-eUb"/>
                         <segue destination="6rC-0I-b7W" kind="presentation" identifier="AddChecklist" id="nVe-1n-CsX"/>
+                        <segue destination="6rC-0I-b7W" kind="presentation" identifier="EditChecklist" id="Ijs-RW-l5u"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PMY-g9-Oz1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1028" y="113"/>
+            <point key="canvasLocation" x="954" y="113"/>
         </scene>
         <!--Add Checklist-->
         <scene sceneID="2jn-wb-kcd">
@@ -319,4 +320,7 @@
     <resources>
         <image name="incomplete" width="80" height="80"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ijs-RW-l5u"/>
+    </inferredMetricsTieBreakers>
 </document>

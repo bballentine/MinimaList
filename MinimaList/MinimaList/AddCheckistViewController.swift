@@ -11,11 +11,13 @@ import UIKit
 protocol AddChecklistViewControllerDelegate: class {
     func addChecklistViewControllerDidCancel(controller: AddCheckistViewController)
     func addChecklistViewController(controller: AddCheckistViewController, didFinishAddingChecklist checklist: Checklist)
+    func addChecklistViewController(controller: AddCheckistViewController, didFinishEditingChecklist checklist: Checklist)
 }
 
 class AddCheckistViewController: UIViewController, UITextFieldDelegate {
     
     weak var delegate: AddChecklistViewControllerDelegate?
+    var checklistToEdit: Checklist?
     
 
     @IBOutlet weak var titleLabel: UITextField!
@@ -23,6 +25,13 @@ class AddCheckistViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let checklist = checklistToEdit {
+            self.title = checklist.name
+            titleLabel.text = checklist.name
+        } else {
+            self.title = "Add Checklist"
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -53,12 +62,15 @@ class AddCheckistViewController: UIViewController, UITextFieldDelegate {
         }
     }
     @IBAction func doneButtonPressed(_ sender: AnyObject) {
-        if let newChecklistName = titleLabel.text {
-            let newChecklist = Checklist(name: newChecklistName)
+        if let editedChecklist = checklistToEdit {
+            editedChecklist.name = titleLabel.text!
+            delegate?.addChecklistViewController(controller: self, didFinishEditingChecklist: editedChecklist)
+            
+        } else {
+            let newChecklistName = titleLabel.text
+            let newChecklist = Checklist(name: newChecklistName!)
             delegate?.addChecklistViewController(controller: self, didFinishAddingChecklist: newChecklist)
         }
-        
-        
     }
 
     /*

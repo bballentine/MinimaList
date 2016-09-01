@@ -90,6 +90,11 @@ class AllListsViewController: UITableViewController, AddChecklistViewControllerD
         dismiss(animated: true, completion: nil)
     }
     
+    func addChecklistViewController(controller: AddCheckistViewController, didFinishEditingChecklist checklist: Checklist) {
+        tableView.reloadData()
+        dismiss(animated: true, completion: nil)
+    }
+    
     // MARK: Cell Configuration
 
     func configureCell(cell: ChecklistCell, forList list: Checklist) {
@@ -113,6 +118,21 @@ class AllListsViewController: UITableViewController, AddChecklistViewControllerD
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
+    }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { action, index in
+            self.dataModel.lists.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        
+        let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
+            print("edit button tapped")
+            let listToEdit = self.dataModel.lists[indexPath.row]
+            self.performSegue(withIdentifier: "EditChecklist", sender: listToEdit)
+        }
+        
+        return [delete, edit]
     }
 
     // Override to support editing the table view.
@@ -155,6 +175,11 @@ class AllListsViewController: UITableViewController, AddChecklistViewControllerD
         } else if segue.identifier == "ListDetail" {
             let controller = segue.destination as! ChecklistViewController
             controller.checklist = sender as! Checklist
+        } else if segue.identifier == "EditChecklist" {
+            let navigationController = segue.destination as! UINavigationController
+            let controller = navigationController.topViewController as! AddCheckistViewController
+            controller.delegate = self
+            controller.checklistToEdit = (sender as! Checklist)
         }
         
     }
