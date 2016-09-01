@@ -9,9 +9,9 @@
 import UIKit
 
 enum Priority: Int {
-    case Low = 1
-    case Medium = 2
-    case High = 3
+    case Low = 0
+    case Medium = 1
+    case High = 2
 }
 
 class ChecklistItem: NSObject {

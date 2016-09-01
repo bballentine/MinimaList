@@ -51,12 +51,9 @@ class AddChecklistItemViewController: UIViewController {
     }
     
     @IBAction func doneButtonPressed(_ sender: AnyObject) {
-        //Logic to create item
         let newTitle = titleLabel.text
         let newDetail = descriptionLabel.text
-        let newPriority: Priority = .Medium
-        
-        // Need to make safe later
+        let newPriority: Priority = Priority(rawValue: priorityControl.selectedSegmentIndex) ?? .Medium
         let newChecklistItem = ChecklistItem(name: newTitle!, detail: newDetail!, priority: newPriority)
 
         delegate?.addChecklistItemViewController(controller: self, didAddChecklistItem: newChecklistItem)
