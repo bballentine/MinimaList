@@ -139,6 +139,11 @@ class AllListsViewController: UITableViewController, AddChecklistViewControllerD
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
+    
+    override func tableView(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! ChecklistCell
+        cell.contentView.clipsToBounds = true
+    }
 
 
     @IBAction func addButtonPressed(_ sender: AnyObject) {
