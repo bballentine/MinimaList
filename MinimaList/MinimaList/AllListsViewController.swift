@@ -98,6 +98,7 @@ class AllListsViewController: UITableViewController, AddChecklistViewControllerD
     // MARK: Cell Configuration
 
     func configureCell(cell: ChecklistCell, forList list: Checklist) {
+        
         cell.checklistTitle.text = list.name
         
         if list.items.count > 0 {
@@ -109,11 +110,12 @@ class AllListsViewController: UITableViewController, AddChecklistViewControllerD
             let progressView = UIView(frame: myRect)
             progressView.backgroundColor = MinimalStyles.priorityLow
             cell.progressIndicator.addSubview(progressView)
+        } else {
+            
         }
         
     }
     
-
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
@@ -127,7 +129,6 @@ class AllListsViewController: UITableViewController, AddChecklistViewControllerD
         }
         
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
-            print("edit button tapped")
             let listToEdit = self.dataModel.lists[indexPath.row]
             self.performSegue(withIdentifier: "EditChecklist", sender: listToEdit)
         }

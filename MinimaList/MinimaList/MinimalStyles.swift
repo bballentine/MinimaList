@@ -36,7 +36,15 @@ public class MinimalStyles : NSObject {
 
     //// Drawing Methods
 
-    public class func drawCanvas1() {
+    public class func drawProgressView(frame frame: CGRect = CGRect(x: 0, y: 0, width: 375, height: 120), number: CGFloat = 375) {
+
+        //// Background Drawing
+
+
+        //// Progress Drawing
+        let progressPath = UIBezierPath(rect: CGRect(x: 0, y: 0, width: number, height: 120))
+        MinimalStyles.priorityMedium.setFill()
+        progressPath.fill()
     }
 
 }

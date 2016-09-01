@@ -45,5 +45,10 @@ class Checklist: NSObject {
         super.init()
     }
     
+    func calculatePercent() -> Double {
+        return Double(complete) / Double(self.items.count)
+        
+    }
+    
     
 }
