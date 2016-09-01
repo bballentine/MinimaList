@@ -51,12 +51,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func customizeAppearance() {
         UINavigationBar.appearance().barTintColor = UIColor.white
-        UINavigationBar.appearance().tintColor = MinimalStyles.darkText
+        UINavigationBar.appearance().tintColor = MinimalStyles.callOut
         UINavigationBar.appearance().isTranslucent = false
         
         let attributes = [
             NSForegroundColorAttributeName: MinimalStyles.darkText,
-            NSFontAttributeName: UIFont(name: "Avenir-Heavy", size: 20)!
+            NSFontAttributeName: UIFont(name: "AvenirNext-Bold", size: 19)!
         ]
         
         

@@ -103,7 +103,7 @@ class AllListsViewController: UITableViewController, AddChecklistViewControllerD
             let progressWidth = width * list.percentComplete
             let myRect = CGRect(x: 0, y: 0, width: progressWidth, height: height)
             let progressView = UIView(frame: myRect)
-            progressView.backgroundColor = MinimalStyles.progressBackground
+            progressView.backgroundColor = MinimalStyles.priorityLow
             cell.progressIndicator.addSubview(progressView)
         }
         
