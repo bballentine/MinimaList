@@ -11,9 +11,12 @@ import UIKit
 protocol AddChecklistItemViewControllerDelegate: class {
     func addChecklistItemViewControllerDidCancel(controller: AddChecklistItemViewController)
     func addChecklistItemViewController(controller: AddChecklistItemViewController, didAddChecklistItem item: ChecklistItem)
+    func addChecklistItemViewController(controller: AddChecklistItemViewController, didEditChecklistItem item: ChecklistItem)
 }
 
 class AddChecklistItemViewController: UIViewController {
+    
+    var checklistItemToEdit: ChecklistItem?
 
     @IBOutlet weak var titleLabel: UITextField!
     @IBOutlet weak var priorityControl: UISegmentedControl!
@@ -24,7 +27,13 @@ class AddChecklistItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let editedChecklistItem = checklistItemToEdit {
+            self.title = editedChecklistItem.name
+            titleLabel.text = editedChecklistItem.name
+            priorityControl.selectedSegmentIndex = editedChecklistItem.priority.rawValue
+        } else {
+            self.title = "Add Item"
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -45,16 +54,27 @@ class AddChecklistItemViewController: UIViewController {
             doneButton.isEnabled = false
         }
     }
+    @IBAction func priorityChanged(_ sender: AnyObject) {
+        doneButton.isEnabled = true
+    }
     @IBAction func cancelButtonPressed(_ sender: AnyObject) {
         delegate?.addChecklistItemViewControllerDidCancel(controller: self)
     }
     
     @IBAction func doneButtonPressed(_ sender: AnyObject) {
-        let newTitle = titleLabel.text
-        let newPriority: Priority = Priority(rawValue: priorityControl.selectedSegmentIndex) ?? .Medium
-        let newChecklistItem = ChecklistItem(name: newTitle!, priority: newPriority)
-
-        delegate?.addChecklistItemViewController(controller: self, didAddChecklistItem: newChecklistItem)
+        if let editedChecklistItem = checklistItemToEdit {
+            editedChecklistItem.name = titleLabel.text!
+            editedChecklistItem.priority = Priority(rawValue: priorityControl.selectedSegmentIndex)!
+            delegate?.addChecklistItemViewController(controller: self, didEditChecklistItem: editedChecklistItem)
+        } else {
+            let newTitle = titleLabel.text
+            let newPriority: Priority = Priority(rawValue: priorityControl.selectedSegmentIndex) ?? .Medium
+            let newChecklistItem = ChecklistItem(name: newTitle!, priority: newPriority)
+            
+            delegate?.addChecklistItemViewController(controller: self, didAddChecklistItem: newChecklistItem)
+        }
+        
+        
     }
 
     /*

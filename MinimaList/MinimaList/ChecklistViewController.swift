@@ -85,13 +85,24 @@ class ChecklistViewController: UITableViewController, AddChecklistItemViewContro
     
     
 
-    /*
-    // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { action, index in
+            self.checklist.items.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        
+        let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
+            let itemToEdit = self.checklist.items[indexPath.row]
+            self.performSegue(withIdentifier: "EditItem", sender: itemToEdit)
+        }
+        
+        return [delete, edit]
+    }
+
 
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -136,6 +147,11 @@ class ChecklistViewController: UITableViewController, AddChecklistItemViewContro
         checklist.items.append(item)
         dismiss(animated: true, completion: nil)
     }
+    
+    func addChecklistItemViewController(controller: AddChecklistItemViewController, didEditChecklistItem item: ChecklistItem) {
+        tableView.reloadData()
+        dismiss(animated: true, completion: nil)
+    }
 
      // MARK: - Navigation
     
@@ -144,6 +160,11 @@ class ChecklistViewController: UITableViewController, AddChecklistItemViewContro
             let navigationController = segue.destination as! UINavigationController
             let controller = navigationController.topViewController as! AddChecklistItemViewController
             controller.delegate = self
+        } else if segue.identifier == "EditItem" {
+            let navigationController = segue.destination as! UINavigationController
+            let controller = navigationController.topViewController as! AddChecklistItemViewController
+            controller.delegate = self
+            controller.checklistItemToEdit = sender as? ChecklistItem
         }
     }
 
