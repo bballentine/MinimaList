@@ -29,4 +29,8 @@ class ChecklistItem: NSObject {
         super.init()
         
     }
+    
+    func toggleComplete() {
+        complete = !complete
+    }
 }

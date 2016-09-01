@@ -70,6 +70,13 @@ class ChecklistViewController: UITableViewController, AddChecklistItemViewContro
         }
         
         cell.itemTitle.text = listItem.name
+        
+        if listItem.complete {
+            cell.completeIcon.image = #imageLiteral(resourceName: "complete")
+        } else {
+            cell.completeIcon.image = #imageLiteral(resourceName: "incomplete")
+        }
+        
     }
     
     @IBAction func addItemPressed(_ sender: AnyObject) {
@@ -92,6 +99,16 @@ class ChecklistViewController: UITableViewController, AddChecklistItemViewContro
             checklist.items.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? ChecklistItemCell {
+            let checklistItem = checklist.items[indexPath.row]
+            checklistItem.toggleComplete()
+            configureCell(cell: cell, listItem: checklistItem)
+        }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     /*

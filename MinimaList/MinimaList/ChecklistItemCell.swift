@@ -11,6 +11,7 @@ import UIKit
 class ChecklistItemCell: UITableViewCell {
     
     @IBOutlet weak var itemTitle: UILabel!
+    @IBOutlet weak var completeIcon: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

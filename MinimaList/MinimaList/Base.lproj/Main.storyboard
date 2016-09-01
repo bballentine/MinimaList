@@ -19,7 +19,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a7i-oq-1YZ" id="MrY-np-hRj">
-                                    <frame key="frameInset" width="375" height="119.5"/>
+                                    <frame key="frameInset" width="375" height="119"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2R8-hG-Prj">
@@ -134,23 +134,33 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jb3-G3-HAk" id="BS5-Yh-xNH">
-                                    <frame key="frameInset" width="375" height="119.5"/>
+                                    <frame key="frameInset" width="375" height="119"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ej-gN-RdN">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ej-gN-RdN">
                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="incomplete" translatesAutoresizingMaskIntoConstraints="NO" id="59r-HB-cSI">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="Cds-QW-Mpb"/>
+                                                <constraint firstAttribute="width" constant="30" id="rmo-th-dpX"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="0ej-gN-RdN" secondAttribute="bottom" constant="20" id="EBU-eX-AgT"/>
-                                        <constraint firstItem="0ej-gN-RdN" firstAttribute="leading" secondItem="BS5-Yh-xNH" secondAttribute="leading" constant="10" id="FsP-2d-ReK"/>
+                                        <constraint firstAttribute="bottom" secondItem="0ej-gN-RdN" secondAttribute="bottom" constant="19" id="EBU-eX-AgT"/>
+                                        <constraint firstItem="0ej-gN-RdN" firstAttribute="leading" secondItem="BS5-Yh-xNH" secondAttribute="leading" constant="48" id="FsP-2d-ReK"/>
                                         <constraint firstAttribute="trailing" secondItem="0ej-gN-RdN" secondAttribute="trailing" constant="10" id="IBX-N5-gqV"/>
+                                        <constraint firstItem="59r-HB-cSI" firstAttribute="centerY" secondItem="BS5-Yh-xNH" secondAttribute="centerY" id="PQ7-zy-vnR"/>
                                         <constraint firstItem="0ej-gN-RdN" firstAttribute="top" secondItem="BS5-Yh-xNH" secondAttribute="top" constant="20" id="SaA-3H-GXE"/>
+                                        <constraint firstItem="59r-HB-cSI" firstAttribute="leading" secondItem="BS5-Yh-xNH" secondAttribute="leading" constant="10" id="bvj-9p-yEH"/>
+                                        <constraint firstItem="0ej-gN-RdN" firstAttribute="leading" secondItem="59r-HB-cSI" secondAttribute="trailing" constant="8" id="jhd-W9-uap"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="completeIcon" destination="59r-HB-cSI" id="Teh-ca-0Nn"/>
                                     <outlet property="itemTitle" destination="0ej-gN-RdN" id="ozs-Yu-Lrd"/>
                                 </connections>
                             </tableViewCell>
@@ -175,7 +185,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ex1-qH-VXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1830" y="113"/>
+            <point key="canvasLocation" x="1829.5999999999999" y="112.89355322338831"/>
         </scene>
         <!--Add Checklist Item View Controller-->
         <scene sceneID="2g8-9j-M4G">
@@ -320,4 +330,7 @@
             <point key="canvasLocation" x="2647.1999999999998" y="120.98950524737631"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="incomplete" width="80" height="80"/>
+    </resources>
 </document>
