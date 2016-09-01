@@ -101,17 +101,10 @@ class AllListsViewController: UITableViewController, AddChecklistViewControllerD
         
         cell.checklistTitle.text = list.name
         
-        if list.items.count > 0 {
-            let cellDimensions = cell.bounds
-            let width = Double(cellDimensions.width)
-            let height = Double(cellDimensions.height)
-            let progressWidth = width * list.percentComplete
-            let myRect = CGRect(x: 0, y: 0, width: progressWidth, height: height)
-            let progressView = UIView(frame: myRect)
-            progressView.backgroundColor = MinimalStyles.priorityLow
-            cell.progressIndicator.addSubview(progressView)
+        if list.calculatePercent() .isNormal {
+            cell.progressIndicator.progress = CGFloat(list.calculatePercent())
         } else {
-            
+            cell.progressIndicator.progress = 0.0
         }
         
     }
@@ -148,20 +141,6 @@ class AllListsViewController: UITableViewController, AddChecklistViewControllerD
     }
 
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
     @IBAction func addButtonPressed(_ sender: AnyObject) {
         performSegue(withIdentifier: "AddChecklist", sender: sender)
     }
