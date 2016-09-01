@@ -16,13 +16,11 @@ enum Priority: Int {
 
 class ChecklistItem: NSObject {
     var name: String
-    var detail: String
     var complete: Bool
     var priority: Priority
     
-    init(name: String, detail: String, priority: Priority) {
+    init(name: String, priority: Priority) {
         self.name = name
-        self.detail = detail
         self.complete = false
         self.priority = priority
         

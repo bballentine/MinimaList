@@ -16,7 +16,6 @@ protocol AddChecklistItemViewControllerDelegate: class {
 class AddChecklistItemViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UITextField!
-    @IBOutlet weak var descriptionLabel: UITextField!
     @IBOutlet weak var priorityControl: UISegmentedControl!
     @IBOutlet weak var doneButton: UIBarButtonItem!
     
@@ -52,9 +51,8 @@ class AddChecklistItemViewController: UIViewController {
     
     @IBAction func doneButtonPressed(_ sender: AnyObject) {
         let newTitle = titleLabel.text
-        let newDetail = descriptionLabel.text
         let newPriority: Priority = Priority(rawValue: priorityControl.selectedSegmentIndex) ?? .Medium
-        let newChecklistItem = ChecklistItem(name: newTitle!, detail: newDetail!, priority: newPriority)
+        let newChecklistItem = ChecklistItem(name: newTitle!, priority: newPriority)
 
         delegate?.addChecklistItemViewController(controller: self, didAddChecklistItem: newChecklistItem)
     }

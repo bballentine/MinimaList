@@ -13,7 +13,6 @@
 		152C72B31D6EAD62000775A7 /* ChecklistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152C72B21D6EAD62000775A7 /* ChecklistCell.swift */; };
 		152C72B51D6EAD7B000775A7 /* ChecklistItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152C72B41D6EAD7B000775A7 /* ChecklistItemCell.swift */; };
 		152C72B71D6EB379000775A7 /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152C72B61D6EB379000775A7 /* ChecklistViewController.swift */; };
-		152C72B91D6EB39F000775A7 /* ChecklistItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152C72B81D6EB39F000775A7 /* ChecklistItemViewController.swift */; };
 		15383DB41D6E999D001B01F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15383DB31D6E999D001B01F7 /* AppDelegate.swift */; };
 		15383DB91D6E999D001B01F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15383DB71D6E999D001B01F7 /* Main.storyboard */; };
 		15383DBB1D6E999D001B01F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15383DBA1D6E999D001B01F7 /* Assets.xcassets */; };
@@ -32,7 +31,6 @@
 		152C72B21D6EAD62000775A7 /* ChecklistCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChecklistCell.swift; sourceTree = "<group>"; };
 		152C72B41D6EAD7B000775A7 /* ChecklistItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChecklistItemCell.swift; sourceTree = "<group>"; };
 		152C72B61D6EB379000775A7 /* ChecklistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
-		152C72B81D6EB39F000775A7 /* ChecklistItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChecklistItemViewController.swift; sourceTree = "<group>"; };
 		15383DB01D6E999D001B01F7 /* MinimaList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinimaList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15383DB31D6E999D001B01F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15383DB81D6E999D001B01F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,7 +60,6 @@
 			children = (
 				152C72A91D6EA5BB000775A7 /* AllListsViewController.swift */,
 				152C72B61D6EB379000775A7 /* ChecklistViewController.swift */,
-				152C72B81D6EB39F000775A7 /* ChecklistItemViewController.swift */,
 				15F6E1EE1D74FFE60044609A /* AddCheckistViewController.swift */,
 				156C0D571D77837000E1E900 /* AddChecklistItemViewController.swift */,
 			);
@@ -211,7 +208,6 @@
 				15F6E1F11D75010B0044609A /* DataModel.swift in Sources */,
 				15383DB41D6E999D001B01F7 /* AppDelegate.swift in Sources */,
 				15F6E1EF1D74FFE60044609A /* AddCheckistViewController.swift in Sources */,
-				152C72B91D6EB39F000775A7 /* ChecklistItemViewController.swift in Sources */,
 				152C72AF1D6EA725000775A7 /* Checklist.swift in Sources */,
 				152C72B11D6EA734000775A7 /* ChecklistItem.swift in Sources */,
 				152C72B31D6EAD62000775A7 /* ChecklistCell.swift in Sources */,
