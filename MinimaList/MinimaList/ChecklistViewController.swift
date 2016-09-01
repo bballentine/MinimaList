@@ -59,7 +59,7 @@ class ChecklistViewController: UITableViewController, AddChecklistItemViewContro
         return cell
     }
     
-    func configureCell(cell: UITableViewCell, listItem: ChecklistItem) {
+    func configureCell(cell: ChecklistItemCell, listItem: ChecklistItem) {
         switch listItem.priority {
         case .Low:
             cell.backgroundColor = MinimalStyles.priorityLow
@@ -69,7 +69,7 @@ class ChecklistViewController: UITableViewController, AddChecklistItemViewContro
             cell.backgroundColor = MinimalStyles.priorityHigh
         }
         
-        cell.textLabel?.text = listItem.name
+        cell.itemTitle.text = listItem.name
     }
     
     @IBAction func addItemPressed(_ sender: AnyObject) {
