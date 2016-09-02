@@ -6,10 +6,11 @@
 
 ## UI
 
-### Video Demo
+### Demo
 
-<iframe src="https://player.vimeo.com/video/181148529" width="640" height="1138" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<p><a href="https://vimeo.com/181148529">MinimaList-Recording</a> from <a href="https://vimeo.com/user409534">Brandon Ballentine</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+![](Assets/MinimaList-Recording.gif "UI Demo")
+
+Check out [Vimeo](https://vimeo.com/user409534) for a longer demo.
 
 The **All Lists View** shows the user’s current to-do lists in a UITableView. The progress bar in the background of each cell shows the percentage of that list’s tasks that are complete, which gives users a quick way to view the status of multiple projects. Tapping the **+** icon presents the **Add Checklist** screen.
 
