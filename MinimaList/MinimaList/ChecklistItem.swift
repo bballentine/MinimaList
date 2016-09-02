@@ -5,7 +5,7 @@
 //  Created by Brandon Ballentine on 8/24/16.
 //  Copyright © 2016 Brandon Ballentine. All rights reserved.
 //
-
+import Foundation
 import UIKit
 
 enum Priority: Int {
@@ -14,7 +14,7 @@ enum Priority: Int {
     case High = 2
 }
 
-class ChecklistItem: NSObject {
+class ChecklistItem: NSObject, NSCoding {
     var name: String
     var complete: Bool
     var priority: Priority
@@ -30,5 +30,18 @@ class ChecklistItem: NSObject {
     
     func toggleComplete() {
         complete = !complete
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        name = aDecoder.decodeObject(forKey: "Name") as! String
+        complete = aDecoder.decodeBool(forKey: "Complete")
+        priority = Priority(rawValue: aDecoder.decodeInteger(forKey: "Priority"))!
+        super.init()
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(name, forKey: "Name")
+        aCoder.encode(complete, forKey: "Complete")
+        aCoder.encode(priority.rawValue, forKey: "Priority")
     }
 }
