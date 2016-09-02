@@ -55,10 +55,10 @@ class DataModel {
         
         if firstTime {
             let checklist1 = Checklist(name: "Getting Started List. Tap here to view items or swipe for other options")
-            let checklistItem1 = ChecklistItem(name: "Tap the + icon to add a new item", priority: .High)
+            let checklistItem1 = ChecklistItem(name: "Tap the + icon to add a new item.", priority: .High)
             checklistItem1.complete = true
-            let checklistItem2 = ChecklistItem(name: "Tap the cell to mark this item as complete", priority: .Medium)
-            let checklistItem3 = ChecklistItem(name: "Swipe to edit or delete an item", priority: .Low)
+            let checklistItem2 = ChecklistItem(name: "Tap the cell to mark this item as complete.", priority: .Medium)
+            let checklistItem3 = ChecklistItem(name: "Swipe to edit or delete an item.", priority: .Low)
             checklist1.items.append(checklistItem1)
             checklist1.items.append(checklistItem2)
             checklist1.items.append(checklistItem3)
