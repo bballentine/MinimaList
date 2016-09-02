@@ -54,7 +54,7 @@ class DataModel {
         let firstTime = userDefaults.bool(forKey: "FirstTime")
         
         if firstTime {
-            let checklist1 = Checklist(name: "Getting Started List. Tap here to view items, or swipe to edit and delete")
+            let checklist1 = Checklist(name: "Getting Started List. Tap here to view items or swipe for other options")
             let checklistItem1 = ChecklistItem(name: "Tap the + icon to add a new item", priority: .High)
             checklistItem1.complete = true
             let checklistItem2 = ChecklistItem(name: "Tap the cell to mark this item as complete", priority: .Medium)
