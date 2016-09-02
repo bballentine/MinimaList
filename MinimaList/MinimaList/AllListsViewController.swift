@@ -18,27 +18,6 @@ class AllListsViewController: UITableViewController, AddChecklistViewControllerD
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120.0
         
-        // Create checklist for testing
-        let checklist1 = Checklist(name: "iOSI Project 1")
-        let checklistItem1 = ChecklistItem(name: "Create user interface in Sketch", priority: .Low)
-        checklistItem1.complete = true
-        let checklistItem2 = ChecklistItem(name: "Create storyboard for UI testing", priority: .Medium)
-        checklist1.items.append(checklistItem1)
-        checklist1.items.append(checklistItem2)
-        dataModel.lists.append(checklist1)
-        
-        let checklist2 = Checklist(name: "My other iOS Project - PSCC")
-        let checklistItem3 = ChecklistItem(name: "Create user interface in Sketch", priority: .High)
-        checklistItem3.complete = true
-        let checklistItem4 = ChecklistItem(name: "Create storyboard for UI testing", priority: .Medium)
-        let checklistItem5 = ChecklistItem(name: "A totally different item", priority: .Low)
-        checklist2.items.append(checklistItem3)
-        checklist2.items.append(checklistItem4)
-        checklist2.items.append(checklistItem5)
-        dataModel.lists.append(checklist2)
-        
-        
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
