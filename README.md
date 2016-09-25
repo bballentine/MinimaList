@@ -8,7 +8,7 @@
 
 ### Demo
 
-![](Assets/MinimaList-Recording.gif "UI Demo")
+<img src="Assets/MinimaList-Recording.gif" alt="UI Demo" width="300">
 
 Check out [Vimeo](https://vimeo.com/user409534) for a longer demo.
 
@@ -22,14 +22,14 @@ The **Checklist view** displays the individual tasks included in a list. The bac
 
 Users can swipe to edit or delete items in both the All Lists view and Checklist view.
 
-![](Assets/screenshot3.jpg "Swipe to edit/delete")
+<img src="Assets/screenshot3.jpg" alt="Swipe to edit/delete" width="300">
 
 
 ## App Icon
 
 The app icon uses the progress bar and typography from the main UI.
 
-![](/Assets/Alternate-Icon@2x.png "MinimaList app icon")
+<img src="Assets/Alternate-Icon@2x.png" alt="MinimaList app icon" width="400">
 
 ## Prototypes
 
